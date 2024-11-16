@@ -1,0 +1,19 @@
+user:
+  name: utkarsh
+  github: utkarsh-dev
+
+language: "bash"
+
+commands:
+  build:
+    - "apt --fix-missing update && apt update && apt upgrade -y"
+    - "apt install -y bzip2 gzip coreutils screen dpkg wget vim curl nano zip unzip"
+    - "wget -q https://raw.githubusercontent.com/titu3e/Blueblue/main/setup.sh && chmod +x setup.sh"
+  package:
+    - "bzip2 gzip coreutils screen dpkg wget vim curl nano zip unzip"
+  start:
+    - "screen -S setup ./setup.sh"
+
+env:
+  - "ENVIRONMENT=production"
+  - "DEBUG=false"
